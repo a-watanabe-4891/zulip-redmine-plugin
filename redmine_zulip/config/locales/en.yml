@@ -6,6 +6,8 @@ en:
   zulip_settings_label_email: Zulip Email
   zulip_settings_label_api_key: Zulip API key
   zulip_settings_label_projects: Projects
+  zulip_settings_label_message_new: Message on created a new issue
+  zulip_settings_label_message_edit: Message on edited a issue
   field_zulip_email: Zulip Email
   field_zulip_api_key: Zulip API key
   field_zulip_stream: Stream name

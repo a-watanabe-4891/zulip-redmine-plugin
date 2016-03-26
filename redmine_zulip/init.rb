@@ -19,5 +19,7 @@ Redmine::Plugin.register :redmine_zulip do
              :zulip_api_key => "",
              :zulip_stream => "",
              :zulip_server => "",
-             :zulip_port => ""}
+             :zulip_port => "",
+             :zulip_message_new => "",
+             :zulip_message_edit => ""}
 end

@@ -24,6 +24,16 @@
 </p>
 
 <p>
+    <%= content_tag(:label, l(:zulip_settings_label_message_new)) %>
+    <%= text_field_tag 'settings[zulip_message_new]', @settings[:zulip_message_new] %>
+</p>
+
+<p>
+    <%= content_tag(:label, l(:zulip_settings_label_message_edit)) %>
+    <%= text_field_tag 'settings[zulip_message_edit]', @settings[:zulip_message_edit] %>
+</p>
+
+<p>
     <%= content_tag(:label, l(:zulip_settings_label_projects)) %>
     <%= select_tag 'settings[projects][]', project_tree_options_for_select(Project.active, :selected => Project.find_by_id(@settings[:projects])), :multiple => true, :size => Project.active.size %>
 </p>

@@ -12,3 +12,13 @@
     <%= form.text_field :zulip_stream %>
     Which Zulip stream will receive updates. The message topic will be the project name.
 </p>
+
+<p>
+    <%= form.text_area :zulip_message_new %>
+    The message when a new issue is created.
+</p>
+
+<p>
+    <%= form.text_area :zulip_message_edit %>
+    The message when a issue is edited.
+</p>
