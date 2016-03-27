@@ -70,21 +70,20 @@ class NotificationHook < Redmine::Hook::Listener
         msg = msg_template
         msg.gsub!(/%\{([^\}]+)\}/) do |v|
             word = $1
-            case word
-            when 'username' then User.current.name
-            when 'url' then url(issue)
-            when 'projectname' then project.name
-            when /^(.+?)(:([^:]+))?$/ then
+            if word =~ /^(.+?)(:([^:]+))?$/ then
                 str = $1
                 cond = $3
                 if cond then
                     tracker = issue.tracker.to_s
                     next "" if tracker != cond
                 end
-                if std_fields.include?(str) then
-                    issue.__send__(str).to_s
-                elsif str =~ /^'(.*)'$/ then
-                    $1
+
+                case
+                when std_fields.include?(str) then issue.__send__(str).to_s
+                when str =~ /^'(.*)'$/ then $1
+                when str == 'username' then User.current.name
+                when str == 'url' then url(issue)
+                when str == 'projectname' then project.name
                 else
                     cv = issue.custom_field_values.detect {|c| c.custom_field.name == str}
                     cv ? show_value(cv, false) : word
