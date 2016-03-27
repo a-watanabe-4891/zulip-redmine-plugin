@@ -11,3 +11,5 @@ en:
   field_zulip_email: Zulip Email
   field_zulip_api_key: Zulip API key
   field_zulip_stream: Stream name
+  field_zulip_message_new: Message(new issue)
+  field_zulip_message_edit: Message(edit issue)

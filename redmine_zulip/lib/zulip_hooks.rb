@@ -66,7 +66,7 @@ class NotificationHook < Redmine::Hook::Listener
         issue = context[:issue]
         project = issue.project
 
-        std_fields = %(id tracker status priority author assigned_to subject description notes start_date due_date done_ratio spent_hours)
+        std_fields = %w(id tracker status priority author assigned_to subject description notes start_date due_date done_ratio spent_hours)
         msg = msg_template
         msg.gsub!(/%\{([^\}]+)\}/) do |v|
             word = $1
